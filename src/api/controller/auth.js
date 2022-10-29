@@ -23,6 +23,8 @@ module.exports = class extends Base {
         appid: think.config("weixin.appid"),
       },
     };
+    try {
+      
     let sessionData = await rp(options);
     sessionData = JSON.parse(sessionData);
     console.log(sessionData);
@@ -30,14 +32,14 @@ module.exports = class extends Base {
       return this.fail("登录失败1");
     }
     // 验证用户信息完整性
-    // const crypto = require("crypto");
-    // const sha1 = crypto
-    //   .createHash("sha1")
-    //   .update(fullUserInfo.rawData + sessionData.session_key)
-    //   .digest("hex");
-    // if (fullUserInfo.signature !== sha1) {
-    //   return this.fail("登录失败2");
-    // }
+    const crypto = require("crypto");
+    const sha1 = crypto
+      .createHash("sha1")
+      .update(fullUserInfo.rawData + sessionData.session_key)
+      .digest("hex");
+    if (fullUserInfo.signature !== sha1) {
+      return this.fail("登录失败2");
+    }
     // 解释用户数据
     const WeixinSerivce = this.service("weixin", "api");
     const weixinUserInfo = await WeixinSerivce.decryptUserInfoData(
@@ -96,7 +98,7 @@ module.exports = class extends Base {
         city: userInfo.city,
       });
     const newUserInfo = await this.model("user")
-      .field("id,username,nickname,gender, avatar")
+      .field("id,username,nickname,gender,avatar")
       .where({
         id: userId,
       })
@@ -115,6 +117,9 @@ module.exports = class extends Base {
       userInfo: newUserInfo,
       is_new: is_new,
     });
+  } catch (error) {
+      this.fail(error)
+    }
   }
   async logoutAction() {
     return this.success();
