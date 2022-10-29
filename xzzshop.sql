@@ -33,7 +33,7 @@ CREATE TABLE `xzzshop_ad` (
   `is_delete` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `enabled` (`enabled`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of xzzshop_ad
@@ -55,12 +55,12 @@ CREATE TABLE `xzzshop_address` (
   `city_id` smallint NOT NULL DEFAULT '0',
   `district_id` smallint NOT NULL DEFAULT '0',
   `address` varchar(120) NOT NULL DEFAULT '',
-  `mobile` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT '',
+  `mobile` varchar(60) CHARACTER SET utf8mb4 DEFAULT '',
   `is_default` tinyint unsigned NOT NULL DEFAULT '0',
   `is_delete` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=249 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=249 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of xzzshop_address
@@ -85,7 +85,7 @@ CREATE TABLE `xzzshop_admin` (
   `last_login_time` int NOT NULL DEFAULT '0',
   `is_delete` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of xzzshop_admin
@@ -120,7 +120,7 @@ CREATE TABLE `xzzshop_cart` (
   `is_fast` tinyint(1) NOT NULL DEFAULT '0' COMMENT '1',
   `is_delete` tinyint unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9058 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=9058 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of xzzshop_cart
@@ -161,7 +161,7 @@ CREATE TABLE `xzzshop_category` (
   `is_channel` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`) USING BTREE,
   KEY `parent_id` (`parent_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1036010 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=1036010 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of xzzshop_category
@@ -176,7 +176,7 @@ COMMIT;
 DROP TABLE IF EXISTS `xzzshop_comment`;
 CREATE TABLE `xzzshop_comment` (
   `id` smallint unsigned NOT NULL AUTO_INCREMENT,
-  `content` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '',
+  `content` varchar(255) CHARACTER SET utf8mb4 NOT NULL DEFAULT '',
   `goods_id` int NOT NULL DEFAULT '0',
   `image_url` json DEFAULT NULL,
   `enabled` tinyint unsigned NOT NULL DEFAULT '0',
@@ -186,7 +186,7 @@ CREATE TABLE `xzzshop_comment` (
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `enabled` (`enabled`)
-) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of xzzshop_comment
@@ -240,7 +240,7 @@ CREATE TABLE `xzzshop_except_area` (
   `area` varchar(3000) NOT NULL DEFAULT '0' COMMENT '0位默认，',
   `is_delete` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of xzzshop_except_area
@@ -260,7 +260,7 @@ CREATE TABLE `xzzshop_except_area_detail` (
   `area` int NOT NULL DEFAULT '0' COMMENT '0位默认，',
   `is_delete` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of xzzshop_except_area_detail
@@ -278,7 +278,7 @@ CREATE TABLE `xzzshop_footprint` (
   `goods_id` int NOT NULL DEFAULT '0',
   `add_time` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4690 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4690 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of xzzshop_footprint
@@ -314,7 +314,7 @@ CREATE TABLE `xzzshop_formid` (
   `add_time` int NOT NULL DEFAULT '0' COMMENT '添加时间',
   `use_times` tinyint(1) NOT NULL DEFAULT '0' COMMENT '使用次数',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3985 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3985 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of xzzshop_formid
@@ -328,12 +328,12 @@ COMMIT;
 DROP TABLE IF EXISTS `xzzshop_freight_template`;
 CREATE TABLE `xzzshop_freight_template` (
   `id` mediumint unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '0' COMMENT '运费模板名称',
+  `name` varchar(120) CHARACTER SET utf8 NOT NULL DEFAULT '0' COMMENT '运费模板名称',
   `package_price` decimal(5,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '包装费用',
   `freight_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0按件，1按重量',
   `is_delete` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of xzzshop_freight_template
@@ -358,7 +358,7 @@ CREATE TABLE `xzzshop_freight_template_detail` (
   `area` int NOT NULL DEFAULT '0' COMMENT '0位默认，',
   `is_delete` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=263 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=263 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of xzzshop_freight_template_detail
@@ -533,7 +533,7 @@ CREATE TABLE `xzzshop_freight_template_group` (
   `free_by_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '0没设置',
   `is_delete` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of xzzshop_freight_template_group
@@ -606,7 +606,7 @@ CREATE TABLE `xzzshop_goods` (
   KEY `cat_id` (`category_id`),
   KEY `goods_number` (`goods_number`),
   KEY `sort_order` (`sort_order`)
-) ENGINE=MyISAM AUTO_INCREMENT=1181013 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=1181013 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of xzzshop_goods
@@ -631,7 +631,7 @@ CREATE TABLE `xzzshop_goods_gallery` (
   `is_delete` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `goods_id` (`goods_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=692 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=692 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of xzzshop_goods_gallery
@@ -664,7 +664,7 @@ CREATE TABLE `xzzshop_goods_specification` (
   PRIMARY KEY (`id`) USING BTREE,
   KEY `goods_id` (`goods_id`),
   KEY `specification_id` (`specification_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=92 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='商品对应规格表值表';
+) ENGINE=MyISAM AUTO_INCREMENT=92 DEFAULT CHARSET=utf8mb4 COMMENT='商品对应规格表值表';
 
 -- ----------------------------
 -- Records of xzzshop_goods_specification
@@ -690,8 +690,8 @@ CREATE TABLE `xzzshop_keywords` (
   `scheme _url` varchar(255) NOT NULL DEFAULT '' COMMENT '关键词的跳转链接',
   `id` int NOT NULL AUTO_INCREMENT,
   `type` int unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`keyword`,`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='热闹关键词表';
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COMMENT='热闹关键词表';
 
 -- ----------------------------
 -- Records of xzzshop_keywords
@@ -709,7 +709,7 @@ CREATE TABLE `xzzshop_notice` (
   `end_time` int NOT NULL DEFAULT '0',
   `is_delete` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of xzzshop_notice
@@ -742,10 +742,10 @@ CREATE TABLE `xzzshop_order` (
   `print_info` varchar(255) NOT NULL DEFAULT '',
   `mobile` varchar(60) NOT NULL DEFAULT '',
   `postscript` varchar(255) NOT NULL DEFAULT '',
-  `admin_memo` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `admin_memo` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `shipping_fee` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '免邮的商品的邮费，这个在退款时不能退给客户',
   `pay_name` varchar(120) NOT NULL DEFAULT '',
-  `pay_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '0',
+  `pay_id` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '0',
   `change_price` decimal(10,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '0没改价，不等于0改过价格，这里记录原始的价格',
   `actual_price` decimal(10,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '实际需要支付的金额',
   `order_price` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '订单总价',
@@ -767,7 +767,7 @@ CREATE TABLE `xzzshop_order` (
   KEY `shipping_status` (`shipping_status`),
   KEY `pay_status` (`pay_status`),
   KEY `pay_id` (`pay_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1341 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=1341 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of xzzshop_order
@@ -805,7 +805,7 @@ CREATE TABLE `xzzshop_order_express` (
   `region_code` varchar(10) NOT NULL DEFAULT '0' COMMENT '快递的地区编码，如杭州571',
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=126 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='订单物流信息表，发货时生成';
+) ENGINE=MyISAM AUTO_INCREMENT=126 DEFAULT CHARSET=utf8mb4 COMMENT='订单物流信息表，发货时生成';
 
 -- ----------------------------
 -- Records of xzzshop_order_express
@@ -836,7 +836,7 @@ CREATE TABLE `xzzshop_order_goods` (
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`),
   KEY `goods_id` (`goods_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1489 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=1489 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of xzzshop_order_goods
@@ -870,7 +870,7 @@ CREATE TABLE `xzzshop_product` (
   `is_on_sale` tinyint(1) NOT NULL DEFAULT '1',
   `is_delete` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=266 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=266 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of xzzshop_product
@@ -903,13 +903,13 @@ CREATE TABLE `xzzshop_region` (
   `type` tinyint(1) NOT NULL DEFAULT '2',
   `agency_id` smallint unsigned NOT NULL DEFAULT '0',
   `area` smallint unsigned NOT NULL DEFAULT '0' COMMENT '方位，根据这个定运费',
-  `area_code` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '0' COMMENT '方位代码',
+  `area_code` varchar(10) CHARACTER SET utf8 NOT NULL DEFAULT '0' COMMENT '方位代码',
   `far_area` int unsigned NOT NULL DEFAULT '0' COMMENT '偏远地区',
   PRIMARY KEY (`id`),
   KEY `parent_id` (`parent_id`),
   KEY `region_type` (`type`),
   KEY `agency_id` (`agency_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4047 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4047 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of xzzshop_region
@@ -4974,7 +4974,7 @@ CREATE TABLE `xzzshop_search_history` (
   `add_time` int NOT NULL DEFAULT '0' COMMENT '搜索时间',
   `user_id` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6189 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6189 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of xzzshop_search_history
@@ -5011,7 +5011,7 @@ CREATE TABLE `xzzshop_settings` (
   `countdown` int NOT NULL DEFAULT '0' COMMENT '10分钟倒计时',
   `reset` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of xzzshop_settings
@@ -5034,7 +5034,7 @@ CREATE TABLE `xzzshop_shipper` (
   `enabled` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `xzzshop_shipper_id_uindex` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='快递公司';
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COMMENT='快递公司';
 
 -- ----------------------------
 -- Records of xzzshop_shipper
@@ -5070,7 +5070,7 @@ CREATE TABLE `xzzshop_show_settings` (
   `title` varchar(255) DEFAULT NULL,
   `desc` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of xzzshop_show_settings
@@ -5087,9 +5087,9 @@ CREATE TABLE `xzzshop_specification` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(60) NOT NULL DEFAULT '',
   `sort_order` tinyint unsigned NOT NULL DEFAULT '0',
-  `memo` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '0' COMMENT '说明',
+  `memo` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '0' COMMENT '说明',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='规格表，存的是各种规格，如规格，重量，颜色，包装等';
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COMMENT='规格表，存的是各种规格，如规格，重量，颜色，包装等';
 
 -- ----------------------------
 -- Records of xzzshop_specification
@@ -5124,7 +5124,7 @@ CREATE TABLE `xzzshop_user` (
   `province` varchar(100) DEFAULT '0',
   `city` varchar(100) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1105 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=1105 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of xzzshop_user

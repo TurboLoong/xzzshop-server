@@ -5,9 +5,9 @@ module.exports = {
   database: "xzzshop",
   prefix: "xzzshop_",
   encoding: "utf8mb4",
-  host: "127.0.0.1",
+  host: "10.28.104.244",
   port: "3306",
   user: "root",
-  password: "zxbzxb1655",
+  password: "Xyl2312987772",
   dateStrings: true,
 };
