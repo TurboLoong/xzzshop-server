@@ -4,7 +4,7 @@ module.exports = {
   port: 8080,
   weixin: {
     appid: "wx23ae651f99a92e66", // 小程序 appid
-    secret: "68210cfc07605a33f4ec3b51ff359f52", // 小程序密钥
+    secret: "4c54af87eb2cb0f0905e29713dc5b3ab", // 小程序密钥
     mch_id: "", // 商户帐号ID
     partner_key: "", // 微信支付密钥
     notify_url: "https://shopserver.jzzz66.cn/api/pay/notify", // 微信支付异步通知
