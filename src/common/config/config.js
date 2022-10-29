@@ -1,6 +1,7 @@
 // default config
 module.exports = {
   default_module: "api",
+  port: 8080,
   weixin: {
     appid: "wxd03ab9b33b531291", // 小程序 appid
     secret: "", // 小程序密钥
